@@ -1,0 +1,38 @@
+# Salesforce DX
+.sfdx/
+.localdevserver/
+sfpowerkit_logs/
+
+# VS Code settings
+.vscode/
+*.log
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Node modules (if using npm scripts or LWC tests)
+node_modules/
+
+# LWC Jest test output
+coverage/
+
+# Temporary files created by Salesforce CLI
+dump.json
+
+# Org-specific config files
+orgs/
+.env
+.env.*
+
+# Salesforce CLI auth files
+*.json
+**/.sf/*
+.sfplugindata
+
+# Other temporary files
+*.tmp
+*.swp
+*.bak
