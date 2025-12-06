@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cost_Template__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Lookup field to Upgrade template.</description>
+    <inlineHelpText>Lookup field to Upgrade template.</inlineHelpText>
+    <label>Cost Template</label>
+    <referenceTo>Upgrade_Template__c</referenceTo>
+    <relationshipLabel>Car</relationshipLabel>
+    <relationshipName>Car</relationshipName>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

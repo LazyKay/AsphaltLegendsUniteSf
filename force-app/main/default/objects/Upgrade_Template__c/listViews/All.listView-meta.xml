@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Stage_1_Cost__c</columns>
+    <columns>Uncommon_Part_Cost__c</columns>
+    <columns>Rare_Part_Cost__c</columns>
+    <columns>Epic_Part_Cost__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Records</label>
+</ListView>

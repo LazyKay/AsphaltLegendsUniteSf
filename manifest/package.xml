@@ -1,36 +1,85 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
-        <name>ApexClass</name>
+        <members>Car_Star_Level__c.Custom_Compact_Layout</members>
+        <members>Car__c.Custom_Compact_Layout</members>
+        <members>Upgrade_Template__c.Custom_Compact_Layout</members>
+        <name>CompactLayout</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexComponent</name>
+        <members>Car_Star_Level__c.Accel_Epic_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Accel_Max__c</members>
+        <members>Car_Star_Level__c.Accel_Rare_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Accel_Uncommon_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Blueprints_Required__c</members>
+        <members>Car_Star_Level__c.Car__c</members>
+        <members>Car_Star_Level__c.Hand_Epic_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Hand_Rare_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Hand_Uncommon_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Handling_Max__c</members>
+        <members>Car_Star_Level__c.Max_Stage_Index__c</members>
+        <members>Car_Star_Level__c.Nitro_Epic_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Nitro_Max__c</members>
+        <members>Car_Star_Level__c.Nitro_Rare_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Nitro_Uncommon_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Oc_Accel_Max__c</members>
+        <members>Car_Star_Level__c.Oc_Handling_Max__c</members>
+        <members>Car_Star_Level__c.Oc_Nitro_Max__c</members>
+        <members>Car_Star_Level__c.Oc_Rank_Max__c</members>
+        <members>Car_Star_Level__c.Oc_Top_Speed_Max__c</members>
+        <members>Car_Star_Level__c.Rank_Max__c</members>
+        <members>Car_Star_Level__c.Rank_Min__c</members>
+        <members>Car_Star_Level__c.Row_Total_Epic_Count__c</members>
+        <members>Car_Star_Level__c.Row_Total_Rare_Count__c</members>
+        <members>Car_Star_Level__c.Row_Total_Uncommon_Count__c</members>
+        <members>Car_Star_Level__c.Speed_Epic_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Speed_Rare_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Speed_Uncommon_Part_Slots__c</members>
+        <members>Car_Star_Level__c.Star_Level__c</members>
+        <members>Car_Star_Level__c.Star_Total_Cost__c</members>
+        <members>Car_Star_Level__c.Top_Speed_Max__c</members>
+        <members>Car__c.Class__c</members>
+        <members>Car__c.Cost_Template__c</members>
+        <members>Car__c.Grand_Total_Upgrade_Cost__c</members>
+        <members>Car__c.Max_Stars__c</members>
+        <members>Car__c.Rarity__c</members>
+        <members>Car__c.Release_Date__c</members>
+        <members>Car__c.Total_Blueprints__c</members>
+        <members>Car__c.Total_Epic_Slots__c</members>
+        <members>Car__c.Total_Import_Cost__c</members>
+        <members>Car__c.Total_Rare_Slots__c</members>
+        <members>Car__c.Total_Uncommon_Slots__c</members>
+        <members>Car__c.Unlock_Type__c</members>
+        <members>Upgrade_Template__c.Epic_Part_Cost__c</members>
+        <members>Upgrade_Template__c.Rare_Part_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_10_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_11_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_12_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_13_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_1_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_2_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_3_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_4_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_5_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_6_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_7_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_8_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_9_Cost__c</members>
+        <members>Upgrade_Template__c.Stage_Total_Cost__c</members>
+        <members>Upgrade_Template__c.Uncommon_Part_Cost__c</members>
+        <name>CustomField</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexPage</name>
+        <members>Car_Star_Level__c</members>
+        <members>Car__c</members>
+        <members>Upgrade_Template__c</members>
+        <name>CustomObject</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
+        <members>Car_Star_Level__c.All</members>
+        <members>Car__c.All</members>
+        <members>Upgrade_Template__c.All</members>
+        <name>ListView</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
-    </types>
-    <version>64.0</version>
+    <version>65.0</version>
 </Package>

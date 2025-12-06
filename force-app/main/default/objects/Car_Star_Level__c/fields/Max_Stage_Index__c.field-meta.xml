@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Stage_Index__c</fullName>
+    <description>The max stage you can reach at this star (e.g., 3, 6, 8...).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The max stage you can reach at this star (e.g., 3, 6, 8...).</inlineHelpText>
+    <label>Max Stage Index</label>
+    <precision>2</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

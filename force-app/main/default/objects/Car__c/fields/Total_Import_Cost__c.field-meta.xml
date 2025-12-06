@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Import_Cost__c</fullName>
+    <description>Formula to calculate total import parts cost.</description>
+    <formula>(Total_Uncommon_Slots__c * Cost_Template__r.Uncommon_Part_Cost__c) +
+(Total_Rare_Slots__c * Cost_Template__r.Rare_Part_Cost__c) +
+(Total_Epic_Slots__c * Cost_Template__r.Epic_Part_Cost__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Formula to calculate total import parts cost.</inlineHelpText>
+    <label>Total Import Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

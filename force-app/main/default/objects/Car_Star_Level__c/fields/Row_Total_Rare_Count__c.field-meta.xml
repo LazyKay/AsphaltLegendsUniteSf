@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Row_Total_Rare_Count__c</fullName>
+    <externalId>false</externalId>
+    <formula>BLANKVALUE(Speed_Rare_Part_Slots__c, 0) + 
+BLANKVALUE(Accel_Rare_Part_Slots__c, 0) + 
+BLANKVALUE(Hand_Rare_Part_Slots__c, 0) + 
+BLANKVALUE(Nitro_Rare_Part_Slots__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Row Total Rare Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

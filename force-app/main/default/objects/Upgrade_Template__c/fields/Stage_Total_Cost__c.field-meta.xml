@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_Total_Cost__c</fullName>
+    <description>Formula to calculate stage total cost.</description>
+    <formula>(
+  BLANKVALUE(Stage_1_Cost__c, 0) +
+  BLANKVALUE(Stage_2_Cost__c, 0) +
+  BLANKVALUE(Stage_3_Cost__c, 0) +
+  BLANKVALUE(Stage_4_Cost__c, 0) +
+  BLANKVALUE(Stage_5_Cost__c, 0) +
+  BLANKVALUE(Stage_6_Cost__c, 0) +
+  BLANKVALUE(Stage_7_Cost__c, 0) +
+  BLANKVALUE(Stage_8_Cost__c, 0) +
+  BLANKVALUE(Stage_9_Cost__c, 0) +
+  BLANKVALUE(Stage_10_Cost__c, 0) +
+  BLANKVALUE(Stage_11_Cost__c, 0) +
+  BLANKVALUE(Stage_12_Cost__c, 0) +
+  BLANKVALUE(Stage_13_Cost__c, 0)
+) * 4</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Formula to calculate stage total cost.</inlineHelpText>
+    <label>Stage Total Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Star_Total_Cost__c</fullName>
+    <description>This formula dynamically calculates the total cost for that specific star level by looking up the Part Counts (which you stored on the Star record) and the Prices (which are stored on the parent Car&apos;s Template).</description>
+    <formula>/* SECTION 1: IMPORT PARTS COST */
+/* Sums up all Uncommon, Rare, and Epic slots across 4 stats and multiplies by the Template price */
+
+(
+  (
+    BLANKVALUE(Speed_Uncommon_Part_Slots__c, 0) + 
+    BLANKVALUE(Accel_Uncommon_Part_Slots__c, 0) + 
+    BLANKVALUE(Hand_Uncommon_Part_Slots__c, 0) + 
+    BLANKVALUE(Nitro_Uncommon_Part_Slots__c, 0)
+  ) * Car__r.Cost_Template__r.Uncommon_Part_Cost__c
+)
++
+(
+  (
+    BLANKVALUE(Speed_Rare_Part_Slots__c, 0) + 
+    BLANKVALUE(Accel_Rare_Part_Slots__c, 0) + 
+    BLANKVALUE(Hand_Rare_Part_Slots__c, 0) + 
+    BLANKVALUE(Nitro_Rare_Part_Slots__c, 0)
+  ) * Car__r.Cost_Template__r.Rare_Part_Cost__c
+)
++
+(
+  (
+    BLANKVALUE(Speed_Epic_Part_Slots__c, 0) + 
+    BLANKVALUE(Accel_Epic_Part_Slots__c, 0) + 
+    BLANKVALUE(Hand_Epic_Part_Slots__c, 0) + 
+    BLANKVALUE(Nitro_Epic_Part_Slots__c, 0)
+  ) * Car__r.Cost_Template__r.Epic_Part_Cost__c
+)
+
++
+
+/* SECTION 2: STAGE UPGRADE COST */
+/* Checks how deep the upgrades go (Stage 3, 6, 8, etc.) and sums the costs from the Template, multiplied by 4 stats */
+
+(
+  CASE( Max_Stage_Index__c ,
+    3, (Car__r.Cost_Template__r.Stage_1_Cost__c + Car__r.Cost_Template__r.Stage_2_Cost__c + Car__r.Cost_Template__r.Stage_3_Cost__c),
+    
+    6, (Car__r.Cost_Template__r.Stage_1_Cost__c + Car__r.Cost_Template__r.Stage_2_Cost__c + Car__r.Cost_Template__r.Stage_3_Cost__c + Car__r.Cost_Template__r.Stage_4_Cost__c + Car__r.Cost_Template__r.Stage_5_Cost__c + Car__r.Cost_Template__r.Stage_6_Cost__c),
+    
+    8, (Car__r.Cost_Template__r.Stage_1_Cost__c + Car__r.Cost_Template__r.Stage_2_Cost__c + Car__r.Cost_Template__r.Stage_3_Cost__c + Car__r.Cost_Template__r.Stage_4_Cost__c + Car__r.Cost_Template__r.Stage_5_Cost__c + Car__r.Cost_Template__r.Stage_6_Cost__c + Car__r.Cost_Template__r.Stage_7_Cost__c + Car__r.Cost_Template__r.Stage_8_Cost__c),
+    
+    10, (Car__r.Cost_Template__r.Stage_1_Cost__c + Car__r.Cost_Template__r.Stage_2_Cost__c + Car__r.Cost_Template__r.Stage_3_Cost__c + Car__r.Cost_Template__r.Stage_4_Cost__c + Car__r.Cost_Template__r.Stage_5_Cost__c + Car__r.Cost_Template__r.Stage_6_Cost__c + Car__r.Cost_Template__r.Stage_7_Cost__c + Car__r.Cost_Template__r.Stage_8_Cost__c + Car__r.Cost_Template__r.Stage_9_Cost__c + Car__r.Cost_Template__r.Stage_10_Cost__c),
+    
+    12, (Car__r.Cost_Template__r.Stage_1_Cost__c + Car__r.Cost_Template__r.Stage_2_Cost__c + Car__r.Cost_Template__r.Stage_3_Cost__c + Car__r.Cost_Template__r.Stage_4_Cost__c + Car__r.Cost_Template__r.Stage_5_Cost__c + Car__r.Cost_Template__r.Stage_6_Cost__c + Car__r.Cost_Template__r.Stage_7_Cost__c + Car__r.Cost_Template__r.Stage_8_Cost__c + Car__r.Cost_Template__r.Stage_9_Cost__c + Car__r.Cost_Template__r.Stage_10_Cost__c + Car__r.Cost_Template__r.Stage_11_Cost__c + Car__r.Cost_Template__r.Stage_12_Cost__c),
+    
+    13, Car__r.Cost_Template__r.Stage_Total_Cost__c/ 4, /* Optimization: If maxed, just grab the full total from template and divide by 4 to get base, then multiply back by 4 below */
+    
+    0
+  ) * 4
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This formula dynamically calculates the total cost for that specific star level by looking up the Part Counts (which you stored on the Star record) and the Prices (which are stored on the parent Car&apos;s Template).</inlineHelpText>
+    <label>Star Total Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
