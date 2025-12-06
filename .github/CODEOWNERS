@@ -1,0 +1,34 @@
+# AsphaltLegendsUniteSf Code Owners
+# This file defines which users or teams are automatically requested to review changes
+
+# Default owners for all changes in the repository
+*                               @LazyKay
+
+# Salesforce metadata and configuration
+sfdx-project.json               @LazyKay
+manifest/                       @LazyKay
+
+# Apex classes and configuration
+force-app/main/default/classes/ @LazyKay
+force-app/main/default/triggers/@LazyKay
+
+# Lightning Web Components
+force-app/main/default/lwc/     @LazyKay
+
+# Aura components
+force-app/main/default/aura/    @LazyKay
+
+# Custom objects and fields
+force-app/main/default/objects/ @LazyKay
+
+# Configuration and project files
+config/                         @LazyKay
+jest.config.js                  @LazyKay
+eslint.config.js                @LazyKay
+package.json                    @LazyKay
+
+# Scripts
+scripts/                        @LazyKay
+
+# Documentation
+README.md                       @LazyKay
