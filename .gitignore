@@ -28,7 +28,6 @@ orgs/
 .env.*
 
 # Salesforce CLI auth files
-*.json
 **/.sf/*
 .sfplugindata
 
