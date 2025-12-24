@@ -36,3 +36,7 @@ orgs/
 *.tmp
 *.swp
 *.bak
+
+# Data scripts
+data/
+scripts/nodejs/

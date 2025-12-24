@@ -168,7 +168,6 @@
         <searchResultsAdditionalFields>Unlock_Type__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Max_Stars__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Release_Date__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields xsi:nil></searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

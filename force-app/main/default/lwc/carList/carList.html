@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Car Garage" icon-name="custom:custom31">
+        <div class="slds-p-around_medium">
+            <!-- Search/Filter could go here -->
+            <lightning-input label="Search" type="search" onchange={handleSearch} class="slds-m-bottom_medium"></lightning-input>
+            
+            <template lwc:if={cars.data}>
+                <div class="car-grid">
+                    <template for:each={filteredCars} for:item="car">
+                        <c-car-tile key={car.Id} car={car} oncarselect={handleCarSelect}></c-car-tile>
+                    </template>
+                </div>
+            </template>
+            <template lwc:elseif={cars.error}>
+               <div class="slds-text-color_error">Error retrieving cars</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
