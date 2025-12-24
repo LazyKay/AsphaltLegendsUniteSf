@@ -1,0 +1,27 @@
+<template>
+  <div class={tileClass} onclick={handleTileClick}>
+    <div class="content">
+      <div class="header">
+        <span class={rarityClass}>{car.Class__c}</span>
+        <span class="name">{car.Name}</span>
+      </div>
+      <div class="image-container">
+        <template lwc:if={car.Image_Url__c}>
+          <img src={car.Image_Url__c} alt={car.Name} class="tile-image" />
+        </template>
+        <template lwc:else>
+          <lightning-icon
+            icon-name="custom:custom31"
+            size="large"
+          ></lightning-icon>
+        </template>
+      </div>
+      <div class="footer">
+        <div class="stars">
+          <!-- Simple text representation for now, or loop in js -->
+          Max Stars: {car.Max_Stars__c}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

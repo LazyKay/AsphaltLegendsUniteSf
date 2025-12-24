@@ -1,0 +1,27 @@
+:host {
+    display: block;
+    margin: 10px;
+}
+.tile {
+    /* Existing card styles or new ones */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.tile:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.tile-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+.content {
+    text-align: center;
+}

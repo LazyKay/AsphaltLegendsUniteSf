@@ -1,0 +1,126 @@
+<template>
+  <lightning-card title="Car Details" icon-name="custom:custom31">
+    <!-- Case 1: Data Loaded -->
+    <template lwc:if={car.data}>
+      <div class="slds-p-around_medium">
+        <div class="slds-grid slds-gutters slds-wrap header-section">
+          <!-- Image Section -->
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+            <div class="car-image-container">
+              <template lwc:if={car.data.fields.Image_Url__c.value}>
+                <img
+                  src={car.data.fields.Image_Url__c.value}
+                  alt={car.data.fields.Name.value}
+                  class="car-img"
+                />
+              </template>
+              <template lwc:else>
+                <div
+                  class="slds-box slds-theme_shade slds-align_absolute-center"
+                  style="height: 200px"
+                >
+                  No Image
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Details Section -->
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-3">
+            <h1 class="slds-text-heading_large slds-m-bottom_small">
+              {car.data.fields.Name.value}
+            </h1>
+
+            <div class="badges slds-m-bottom_medium">
+              <span class="slds-badge slds-theme_inverse slds-m-right_small"
+                >Class {car.data.fields.Class__c.value}</span
+              >
+              <span class="slds-badge slds-theme_info slds-m-right_small"
+                >{car.data.fields.Rarity__c.value}</span
+              >
+              <span class="slds-badge slds-theme_warning"
+                >{car.data.fields.Unlock_Type__c.value}</span
+              >
+            </div>
+
+            <div class="slds-grid slds-wrap">
+              <div class="slds-col slds-size_1-of-2">
+                <p>
+                  <strong>Max Stars:</strong>
+                  {car.data.fields.Max_Stars__c.value}
+                </p>
+                <p>
+                  <strong>Release Date:</strong>
+                  <lightning-formatted-date-time
+                    value={car.data.fields.Release_Date__c.value}
+                  ></lightning-formatted-date-time>
+                </p>
+              </div>
+              <div class="slds-col slds-size_1-of-2">
+                <template lwc:if={car.data.fields.Cost_Template__r}>
+                  <p>
+                    <strong>Cost Template:</strong>
+                    {car.data.fields.Cost_Template__r.value.fields.Name.value}
+                  </p>
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slds-m-top_large">
+          <h3 class="slds-text-heading_small slds-m-bottom_medium">
+            Star Level Stats
+          </h3>
+          <template lwc:if={starLevels}>
+            <lightning-datatable
+              key-field="Id"
+              data={starLevels}
+              columns={columns}
+              hide-checkbox-column
+            >
+            </lightning-datatable>
+          </template>
+          <template lwc:else>
+            <p>No star level data available.</p>
+          </template>
+        </div>
+      </div>
+    </template>
+
+    <!-- Case 2: Error -->
+    <template lwc:elseif={car.error}>
+      <div
+        class="slds-p-around_medium slds-text-color_error slds-box slds-theme_alert-texture slds-theme_error"
+      >
+        <p><strong>Error loading car details.</strong></p>
+        <p>Record ID: {recordId}</p>
+        <p>Error: {errorMessage}</p>
+      </div>
+    </template>
+
+    <!-- Case 3: No Record ID -->
+    <template lwc:elseif={isMissingRecordId}>
+      <div
+        class="slds-p-around_medium slds-box slds-theme_warning slds-theme_alert-texture"
+      >
+        <p><strong>NO RECORD ID FOUND</strong></p>
+        <p>
+          Ensure this component is on a 'Car' Object Page in the Experience
+          Builder.
+        </p>
+      </div>
+    </template>
+
+    <!-- Case 4: Loading -->
+    <template lwc:else>
+      <div class="slds-p-around_medium slds-text-align_center">
+        <lightning-spinner
+          alternative-text="Loading"
+          size="medium"
+        ></lightning-spinner>
+        <p>Loading...</p>
+      </div>
+    </template>
+  </lightning-card>
+</template>
